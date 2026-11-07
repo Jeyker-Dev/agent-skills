@@ -100,3 +100,4 @@ the `clean-code` skill to Laravel.
 - Livewire structure and component decomposition: [references/livewire.md](references/livewire.md)
 - Pest conventions: [references/pest.md](references/pest.md)
 - Static analysis, refactoring, architecture and mutation tests: [references/tooling.md](references/tooling.md)
+- Business rule exceptions in Livewire and HTTP: [references/errors.md](references/errors.md)

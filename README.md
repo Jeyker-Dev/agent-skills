@@ -18,10 +18,11 @@ Framework knowledge is **not** here. It comes from official tools:
 skills/
 ├── practices/       Language-agnostic rules
 │   ├── clean-code/
+│   ├── error-handling/
 │   └── testing-strategy/
 └── stacks/          How the rules map to a stack
     └── laravel-conventions/
-        └── references/   livewire.md, pest.md, tooling.md
+        └── references/   livewire.md, pest.md, tooling.md, errors.md
 ```
 
 Skills live under `skills/` because the `skills` CLI only discovers
@@ -33,6 +34,7 @@ Skills live under `skills/` because the `skills` CLI only discovers
 |---|---|
 | `clean-code` | Writing, refactoring, or reviewing code in any language |
 | `testing-strategy` | Writing tests, or before refactoring existing code |
+| `error-handling` | Throwing, catching, logging, or displaying errors |
 | `laravel-conventions` | Creating or refactoring PHP classes, Livewire components, or routes in Laravel |
 
 ## Install
@@ -46,7 +48,7 @@ npx skills add Jeyker-Dev/agent-skills -a claude-code -a gemini-cli
 
 # Install only some skills (for example, in a non-Laravel project)
 npx skills add Jeyker-Dev/agent-skills -a claude-code -a gemini-cli \
-  --skill clean-code --skill testing-strategy
+  --skill clean-code --skill testing-strategy --skill error-handling
 
 # Install globally for every project
 npx skills add Jeyker-Dev/agent-skills -a claude-code -a gemini-cli -g
@@ -76,7 +78,6 @@ npx skills remove clean-code
 
 | Skill | Notes |
 |---|---|
-| `practices/error-handling` | Boundaries, domain exceptions, when `try/catch` is allowed |
 | `practices/project-docs` | ADRs, changelog, what goes in a project `AGENTS.md` |
 | `architecture/clean-architecture` | Generic layers, once a second stack needs them |
 | `stacks/python-conventions` | uv vs Poetry, ruff, pytest, project structure |

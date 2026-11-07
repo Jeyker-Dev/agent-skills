@@ -67,9 +67,8 @@ registerVipUser($input);
   validated DTO, do not re-check null, type, or hypothetical cases the current
   business rules do not include. No "five-wheel car" code.
 - Fail fast with a specific exception; never return a silent `null` for an
-  error [fail fast].
-- `try/catch` only when the catch does something real: retry, fallback, or
-  translate to a domain exception. Never catch to silence or to log-and-continue.
+  error [fail fast]. Exceptions, `try/catch`, and logging follow the
+  `error-handling` skill.
 
 ## Objects talk to neighbours
 
