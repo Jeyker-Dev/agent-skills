@@ -19,6 +19,7 @@ skills/
 ├── practices/       Language-agnostic rules
 │   ├── clean-code/
 │   ├── error-handling/
+│   ├── project-docs/
 │   └── testing-strategy/
 └── stacks/          How the rules map to a stack
     └── laravel-conventions/
@@ -35,6 +36,7 @@ Skills live under `skills/` because the `skills` CLI only discovers
 | `clean-code` | Writing, refactoring, or reviewing code in any language |
 | `testing-strategy` | Writing tests, or before refactoring existing code |
 | `error-handling` | Throwing, catching, logging, or displaying errors |
+| `project-docs` | Starting a project, before and after a task, architecture decisions, editing `AGENTS.md` |
 | `laravel-conventions` | Creating or refactoring PHP classes, Livewire components, or routes in Laravel |
 
 ## Install
@@ -48,7 +50,7 @@ npx skills add Jeyker-Dev/agent-skills -a claude-code -a gemini-cli
 
 # Install only some skills (for example, in a non-Laravel project)
 npx skills add Jeyker-Dev/agent-skills -a claude-code -a gemini-cli \
-  --skill clean-code --skill testing-strategy --skill error-handling
+  --skill clean-code --skill testing-strategy --skill error-handling --skill project-docs
 
 # Install globally for every project
 npx skills add Jeyker-Dev/agent-skills -a claude-code -a gemini-cli -g
@@ -78,6 +80,5 @@ npx skills remove clean-code
 
 | Skill | Notes |
 |---|---|
-| `practices/project-docs` | ADRs, changelog, what goes in a project `AGENTS.md` |
 | `architecture/clean-architecture` | Generic layers, once a second stack needs them |
 | `stacks/python-conventions` | uv vs Poetry, ruff, pytest, project structure |
