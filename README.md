@@ -10,6 +10,7 @@ Framework knowledge is **not** here. It comes from official tools:
 |---|---|
 | Laravel, Livewire, Flux, Pest, Tailwind | [Laravel Boost](https://laravel.com/docs/boost) (MCP, guidelines, skills, docs search) |
 | Flutter, Dart | Dart and Flutter MCP server (`dart mcp-server`) and `flutter/agent-plugins` rules |
+| Python | No official agent tooling; covered by `python-conventions` |
 | Any library | Context7 MCP |
 
 ## Layout
@@ -22,8 +23,10 @@ skills/
 │   ├── project-docs/
 │   └── testing-strategy/
 └── stacks/          How the rules map to a stack
-    └── laravel-conventions/
-        └── references/   livewire.md, pest.md, tooling.md, errors.md
+    ├── laravel-conventions/
+    │   └── references/   livewire.md, pest.md, tooling.md, errors.md
+    └── python-conventions/
+        └── references/   tooling.md
 ```
 
 Skills live under `skills/` because the `skills` CLI only discovers
@@ -38,6 +41,7 @@ Skills live under `skills/` because the `skills` CLI only discovers
 | `error-handling` | Throwing, catching, logging, or displaying errors |
 | `project-docs` | Starting a project, before and after a task, architecture decisions, editing `AGENTS.md` |
 | `laravel-conventions` | Creating or refactoring PHP classes, Livewire components, or routes in Laravel |
+| `python-conventions` | Creating or changing a Python project, its dependencies, modules, or tests |
 
 ## Install
 
@@ -81,4 +85,3 @@ npx skills remove clean-code
 | Skill | Notes |
 |---|---|
 | `architecture/clean-architecture` | Generic layers, once a second stack needs them |
-| `stacks/python-conventions` | uv vs Poetry, ruff, pytest, project structure |
