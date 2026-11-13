@@ -21,7 +21,8 @@ skills/
 │   ├── clean-code/
 │   ├── error-handling/
 │   ├── project-docs/
-│   └── testing-strategy/
+│   ├── testing-strategy/
+│   └── ui-design/
 └── stacks/          How the rules map to a stack
     ├── laravel-conventions/
     │   └── references/   livewire.md, pest.md, tooling.md, errors.md
@@ -40,8 +41,35 @@ Skills live under `skills/` because the `skills` CLI only discovers
 | `testing-strategy` | Writing tests, or before refactoring existing code |
 | `error-handling` | Throwing, catching, logging, or displaying errors |
 | `project-docs` | Starting a project, before and after a task, architecture decisions, editing `AGENTS.md` |
+| `ui-design` | Designing, building, restyling, or reviewing any screen, component, or landing page |
 | `laravel-conventions` | Creating or refactoring PHP classes, Livewire components, or routes in Laravel |
 | `python-conventions` | Creating or changing a Python project, its dependencies, modules, or tests |
+
+## Design skills
+
+`ui-design` only holds my decisions and says which skill is in charge of each
+job. The design work itself comes from these third-party skills, installed per
+project, never copied into this repo:
+
+| Skill | Install in | Command |
+|---|---|---|
+| `impeccable` | Every project with UI | `npx skills add pbakaus/impeccable` |
+| `fixing-accessibility` | Every project with UI | `npx skills add ibelick/ui-skills --skill fixing-accessibility` |
+| `break-ui` | Every project with UI | `npx skills add emilkowalski/skills --skill break-ui` |
+| Playwright MCP | Every project with UI | `claude mcp add playwright npx @playwright/mcp@latest` |
+| `frontend-design` | New apps | `npx skills add anthropics/skills --skill frontend-design` |
+| `taste-skill` | Marketing landing pages only | `npx skills add Leonxlnx/taste-skill` |
+| `web-design-guidelines` | Web projects | `npx skills add vercel-labs/agent-skills --skill web-design-guidelines` |
+| `pick-ui-library` | React projects only | `npx skills add emilkowalski/skills --skill pick-ui-library` |
+| `mobbin` | Only with a Mobbin Pro plan | `claude plugin marketplace add mobbin/skills` |
+
+- Never install `frontend-design` and `taste-skill` in the same project.
+- `web-design-guidelines` downloads its rules from the `main` branch of
+  `vercel-labs/web-interface-guidelines` on every review. After installing,
+  point that URL to a fixed commit so the rules do not change silently.
+- Keep each project under about ten design skills; too many compete to trigger.
+- Not used: `transitions.dev` (covered by `impeccable` and the motion budget in
+  `ui-design`).
 
 ## Install
 
