@@ -4,8 +4,9 @@ description: >
   Defines Jeyker's UI design rules and decides which design skill wins when
   several are installed: precedence, one creation skill per task, existing UI
   library first, a motion budget, an accessibility floor, required states, and
-  screenshot verification. Use when designing, building, restyling, or
-  reviewing any screen, component, landing page, or visual change.
+  screenshot verification, for web and Flutter apps. Use when designing,
+  building, restyling, or reviewing any screen, component, widget, landing
+  page, or visual change.
 metadata:
   author: Jeyker-Dev
   version: "1.0"
@@ -43,6 +44,14 @@ If the project has no `DESIGN.md`, create one before the first visual change
 | Extreme data and empty states | `break-ui` |
 | Seeing the result | Playwright MCP |
 
+In Flutter apps the web skills above do not apply. There:
+
+| Job | Skill in charge |
+|---|---|
+| iOS and Android platform rules | `ios-design-guidelines`, `android-design-guidelines` |
+| Layout and responsive screens | `flutter-build-responsive-layout`, `flutter-fix-layout-issues` |
+| Seeing the result | `flutter-add-widget-preview` and `flutter screenshot` |
+
 - Use one creation skill per task. Never run `frontend-design` and
   `taste-skill` on the same page.
 - A redesign of an existing product keeps its design system. Do not deal a
@@ -65,8 +74,12 @@ If the project has no `DESIGN.md`, create one before the first visual change
   sheets and page transitions. Ease out on enter, ease in on exit.
 - Animate only `transform` and `opacity`.
 - Landing pages may follow the `taste-skill` motion floor. App screens never do.
-- Respect `prefers-reduced-motion`: replace movement with a fade or nothing,
-  and never hide content behind an animation.
+- Respect reduced motion (`prefers-reduced-motion` on the web,
+  `MediaQuery.disableAnimationsOf(context)` in Flutter): replace movement with
+  a fade or nothing, and never hide content behind an animation.
+- In Flutter, use implicit animations (`AnimatedContainer`,
+  `AnimatedOpacity`) before an `AnimationController`, and the platform's page
+  transitions instead of custom ones.
 
 ## Accessibility floor
 
@@ -75,8 +88,11 @@ Not negotiable, whatever another skill suggests:
 - Contrast at least 4.5:1 for body text, 3:1 for large text and UI controls.
 - Visible keyboard focus on every interactive element.
 - Every input has a visible label; placeholders are not labels.
-- Touch targets at least 44×44 px on mobile, 24×24 px on desktop.
+- Touch targets at least 44×44 pt on iOS, 48×48 dp on Android and in
+  Flutter, 44×44 px on mobile web, 24×24 px on desktop web.
 - Color is never the only signal for state or errors.
+- Text scales with the system font size; layouts must not break at 200%.
+- In Flutter, every icon-only button has a `tooltip` or `Semantics` label.
 
 ## Required states
 
@@ -96,3 +112,12 @@ A visual change is not done until it was seen:
 3. Fix overflow, clipped text, and broken layout before reporting.
 4. For larger changes, run `impeccable` critique and audit, then report what
    was fixed and what was left.
+
+In Flutter apps:
+
+1. Preview the widget with `flutter-add-widget-preview`, or run the app on an
+   emulator and capture it with `flutter screenshot`.
+2. Check a small phone (360 dp wide), a large phone, and a tablet, in light
+   and dark theme, and at 200% text scale.
+3. Fix overflow (the yellow and black stripes) and clipped text before
+   reporting.

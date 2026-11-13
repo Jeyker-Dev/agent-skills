@@ -62,11 +62,18 @@ project, never copied into this repo:
 | `web-design-guidelines` | Web projects | `npx skills add vercel-labs/agent-skills --skill web-design-guidelines` |
 | `pick-ui-library` | React projects only | `npx skills add emilkowalski/skills --skill pick-ui-library` |
 | `mobbin` | Only with a Mobbin Pro plan | `claude plugin marketplace add mobbin/skills` |
+| `ios-design-guidelines`, `android-design-guidelines` | Flutter apps | `npx skills add ehmo/platform-design-skills --skill ios-design-guidelines --skill android-design-guidelines` |
+| `flutter-build-responsive-layout`, `flutter-fix-layout-issues`, `flutter-add-widget-preview` | Flutter apps | `npx skills add flutter/agent-plugins --skill flutter-build-responsive-layout --skill flutter-fix-layout-issues --skill flutter-add-widget-preview` |
 
 - Never install `frontend-design` and `taste-skill` in the same project.
 - `web-design-guidelines` downloads its rules from the `main` branch of
   `vercel-labs/web-interface-guidelines` on every review. After installing,
   point that URL to a fixed commit so the rules do not change silently.
+- Flutter apps install only `ui-design` and the Flutter rows above; the web
+  skills and Playwright MCP do not apply to native screens.
+- `ehmo/platform-design-skills` also ships a skill named
+  `web-design-guidelines`, the same name as Vercel's. Install only the iOS and
+  Android skills from it.
 - Keep each project under about ten design skills; too many compete to trigger.
 - Not used: `transitions.dev` (covered by `impeccable` and the motion budget in
   `ui-design`).
